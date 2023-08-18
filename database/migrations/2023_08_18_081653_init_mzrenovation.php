@@ -48,7 +48,7 @@ class InitMzrenovation extends Migration
         Schema::create('clients', function(Blueprint $table){
             $table->id();
             $table->string('nom');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('sexe');
             $table->integer('tel');
             $table->integer('adresse');
@@ -59,7 +59,7 @@ class InitMzrenovation extends Migration
         Schema::create('profil', function(Blueprint $table){
             $table->id();
             $table->string('nom');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('sexe');
             $table->string('is_admin');
             $table->integer('tel');
@@ -69,7 +69,7 @@ class InitMzrenovation extends Migration
         Schema::create('utilisateurs', function(Blueprint $table){
             $table->id();
             $table->string('nom');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('motpasse');
 
             //relation utilsateurs et profil
@@ -81,7 +81,7 @@ class InitMzrenovation extends Migration
         Schema::create('admin', function(Blueprint $table){
             $table->id();
             $table->string('nom');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('motpasse');
 
             //relation admin et profil
@@ -93,7 +93,7 @@ class InitMzrenovation extends Migration
         Schema::create('commentaires', function(Blueprint $table){
             $table->id();
             $table->string('nom');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('message');           
         });
 
