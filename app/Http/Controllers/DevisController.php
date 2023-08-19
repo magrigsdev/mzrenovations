@@ -13,7 +13,7 @@ class DevisController extends Controller
     {
         $request->validate([
             "date_debut" => "required",
-            "date_fin" => "required|email|unique:Devis",
+            "date_fin" => "required",
             "description" => "required",
             "montants" => "required",
             "valider" => "required",
@@ -27,6 +27,7 @@ class DevisController extends Controller
         $devis->montants = $request->description;
         $devis->valider = $request->valider;
         $devis->clients_id = $request->clients_id;
+        $devis->save();
         
     }
 

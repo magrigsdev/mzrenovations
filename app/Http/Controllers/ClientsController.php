@@ -26,6 +26,7 @@ class ClientsController extends Controller
         $client->sexe = $request->sexe;
         $client->tel = $request->tel;
         $client->adresse = $request->adresse;
+        $client->save();
     }
 
     public function getListeClients()

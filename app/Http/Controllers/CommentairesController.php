@@ -59,7 +59,9 @@ class CommentairesController extends Controller
         $commentaire = new Commentaires();
         $commentaire->nom = $request->nom;
         $commentaire->email = $request->email;
-        $commentaire->message = $request->sexe;
+        $commentaire->message = $request->message;
+        $commentaire->save();
+
         
     }
     
