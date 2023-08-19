@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\CommentairesController;
 
 /*
@@ -20,4 +21,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 //route
-Route::get('commentaires',[CommentairesController::class,"getData"] );
+//commentaires
+Route::get('commentaires',[CommentairesController::class,"getCommentaires"] );
+Route::post('createCommentaire',[CommentairesController::class,"createCommentaire"] );
+
+//client
+Route::get('clients',[ClientsController::class,"getClients"] );
+Route::get('oneclient/{id}',[ClientsController::class,"getOneClient"] );
+Route::post('createclient',[ClientsController::class,"createClient"] );
+
+
