@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Schema;
 class CommentairesController extends Controller
 {
     //
-    public function getCommentaires()
+    public function getListeCommentaires()
     {
         //$commentaires = Commentaires::all()->exist();
         //$table = Commentaires::all();
@@ -51,7 +51,7 @@ class CommentairesController extends Controller
     {
         $request->validate([
             "nom" => "required",
-            "email" => "required|email|unique:clients",
+            "email" => "required|email|unique:Commentaires",
             "message" => "required",
             
         ]);

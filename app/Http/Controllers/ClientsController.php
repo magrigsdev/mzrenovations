@@ -28,7 +28,7 @@ class ClientsController extends Controller
         $client->adresse = $request->adresse;
     }
 
-    public function getClients()
+    public function getListeClients()
     {
         
         
