@@ -52,4 +52,22 @@ Route::get('oneprofil/{id}',[ProfilController::class,"getOneProfil"] );
 //utilisateurs
 Route::get('Listeutilisateurs',[UtilisateursController::class,"getListeUtilisateurs"] );
 Route::get('oneutilisateurs/{id}',[UtilisateursController::class,"getOneUtilisateurs"] );
+//on create un compte utilsateur
 Route::post('createutilisateurs',[UtilisateursController::class,"createUtilisateurs"] );
+
+//admin
+Route::get('alal',[AdminController::class,"getAdmin"]);
+Route::get('alalList',[AdminController::class,"getListAdmin"]);
+//admin-2 delete
+Route::delete('utilisateur/{id}',[AdminController::class,"delUtilisateur"]);
+Route::delete('client/{id}',[AdminController::class,"delClient"]);
+Route::delete('devis/{id}',[AdminController::class,"delDevis"]);
+Route::delete('travaux/{id}',[AdminController::class,"delTravaux"]);
+
+
+//----------------------- LOGIN ----------------------------------//
+Route::post('login',[LoginController::class,"getLogin"]);
+Route::post('logout',[LoginController::class,"getLogout"]);
+
+//mot de pass oublié
+Route::get('passwordforget/{mail}',[LoginController::class,"passwordForget"]);
