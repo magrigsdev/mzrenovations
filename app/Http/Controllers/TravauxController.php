@@ -38,7 +38,7 @@ class TravauxController extends Controller
             //$commentaires = Commentaires::all()->exist();
             //$table = Commentaires::all();
             
-            $checkTable = Schema::hasTable('Devis');
+            $checkTable = Schema::hasTable('Travaux');
     
             if($checkTable){
                 $table = Travaux::all();
@@ -54,8 +54,8 @@ class TravauxController extends Controller
                 else{
                     return response()->json([
                         'status'=>false,
-                        'message'=>"aucune données",                    
-                    ],404);
+                        'message'=>"Aucun travail n'a été réalisé récemment.",                    
+                    ],200);
                 }
                 
             }
